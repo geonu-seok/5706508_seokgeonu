@@ -48,6 +48,17 @@ void ArrayPostOrder(int* tree, int index) {
 	printf("  %d", tree[index]);
 }
 
+void ArrayOrders(int* tree) {
+	index = 0;
+	ArrayPreOrder(tree, index);
+	printf("\n");
+	index = 0;
+	ArrayInOrder(tree, index);
+	printf("\n");
+	index = 0;
+	ArrayPostOrder(tree, index);
+	printf("\n");
+}
 
 void PlaceNode(TreeNode* node, int direction, int data) {
 	TreeNode* n;
@@ -62,17 +73,6 @@ void PlaceNode(TreeNode* node, int direction, int data) {
 		node->right = n;
 }
 
-void ArrayOrders(int* tree) {
-	index = 0;
-	ArrayPreOrder(tree, index);
-	printf("\n");
-	index = 0;
-	ArrayInOrder(tree, index);
-	printf("\n");
-	index = 0;
-	ArrayPostOrder(tree, index);
-	printf("\n");
-}
 
 void GenerateLinkTree(TreeNode* root) {
 	PlaceNode(root, 0, 2);

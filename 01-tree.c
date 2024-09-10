@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
 
@@ -18,7 +18,7 @@ void GenerateArrayTree(int* tree) {
 	}
 
 	for (int i = 0; i < 15; i++) {
-		printf("%d ", tree[i]);s
+		printf("%d ", tree[i]); 
 	}
 	printf("\n");
 }
@@ -44,14 +44,8 @@ void ArrayPostOrder(int* tree, int index) {
 	if (index >= 15)
 		return;
 	ArrayPostOrder(tree, 2 * index + 1);
-	ArrayP가
-	printf("\n");
-	index = 0;
-	ArrayInOrder(tree, index);
-	printf("\n");
-	index = 0;
-	ArrayPostOrder(tree, index);
-	printf("\n");
+	ArrayPostOrder(tree, 2 * index + 2);
+	printf("  %d", tree[index]);
 }
 
 
@@ -66,6 +60,18 @@ void PlaceNode(TreeNode* node, int direction, int data) {
 	}
 	else
 		node->right = n;
+}
+
+void ArrayOrders(int* tree) {
+	index = 0;
+	ArrayPreOrder(tree, index);
+	printf("\n");
+	index = 0;
+	ArrayInOrder(tree, index);
+	printf("\n");
+	index = 0;
+	ArrayPostOrder(tree, index);
+	printf("\n");
 }
 
 void GenerateLinkTree(TreeNode* root) {

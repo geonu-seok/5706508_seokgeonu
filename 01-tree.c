@@ -8,7 +8,7 @@ typedef struct TreeNode {
 	struct TreeNode* left, * right;
 } TreeNode;
 
-int index;
+int index; //전역변수 index 추가
 
 void GenerateArrayTree(int* tree) {
 	int list[15] = { 1,2,9,3,5,10,13,4,6,7,8,11,12,14,15 };
@@ -23,7 +23,7 @@ void GenerateArrayTree(int* tree) {
 	printf("\n");
 }
 
-void ArrayPreOrder(int* tree, int index) {
+void ArrayPreOrder(int* tree, int index) { // index 없이 함수를 작성 못하겠음. 그래서 추가함
 	if (index >= 15)
 		return;
 	printf("  %d", tree[index]);
@@ -44,13 +44,7 @@ void ArrayPostOrder(int* tree, int index) {
 	if (index >= 15)
 		return;
 	ArrayPostOrder(tree, 2 * index + 1);
-	ArrayPostOrder(tree, 2 * index + 2);
-	printf("  %d", tree[index]);
-}
-
-void ArrayOrders(int* tree) {
-	index = 0;
-	ArrayPreOrder(tree, index);
+	ArrayP가
 	printf("\n");
 	index = 0;
 	ArrayInOrder(tree, index);
